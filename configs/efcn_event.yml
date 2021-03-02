@@ -1,0 +1,18 @@
+input_data_dir: data/ncaltech101
+file_format: n-data
+restore_net: data/checkpoints/ncaltech101.ckpt
+network: YoloEventNumpy
+
+leak: 5e-05
+batch_size: 1
+batch_event_size: 200
+
+frame_h: 160
+frame_w: 224
+example_h: 172
+example_w: 232
+
+yolo_cnn_layers: conv1=3,3,1,16 pool1=2,2 conv2=3,3,16,32 pool2=2,2 conv3=3,3,32,64 pool3=2,2 conv4=3,3,64,128 pool4=2,2 conv5=3,3,128,256 pool5=2,2 conv6=1,1,256,512 conv7=1,1,512,110
+yolo_cnn_padding: SAME
+yolo_num_cells_h: 5
+yolo_num_cells_w: 7
